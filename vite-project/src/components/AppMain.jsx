@@ -41,30 +41,41 @@ export default function AppMain (){
         return (
 
             <main>
-                <h1>Learn Web developement</h1>
 
-                <button onClick={() => setSelectedLanguage("HTML")}>HTML</button>
-                <button onClick={() => setSelectedLanguage("CSS")}>CSS</button>
-                <button onClick={() => setSelectedLanguage("JavaScript")}>JavaScript</button>
-                <button onClick={() => setSelectedLanguage("Node.js")}>Node.js</button>
-                <button onClick={() => setSelectedLanguage("Express")}>Express</button>
-                <button onClick={() => setSelectedLanguage("ReactJS")}>ReactJS</button>
+                <section className='section_one'>
+                    <h1>Learn Web developement</h1>
+                </section>
+
+                
+                <section className='section_two'>
+                    <button className='button' onClick={() => setSelectedLanguage("HTML")}>HTML</button>
+                    <button className='button' onClick={() => setSelectedLanguage("CSS")}>CSS</button>
+                    <button className='button' onClick={() => setSelectedLanguage("JavaScript")}>JavaScript</button>
+                    <button className='button' onClick={() => setSelectedLanguage("Node.js")}>Node.js</button>
+                    <button className='button' onClick={() => setSelectedLanguage("Express")}>Express</button>
+                    <button className='button' onClick={() => setSelectedLanguage("ReactJS")}>ReactJS</button>
 
         
-               {/* PER GENERARE I BOTTONI CON MAP
+                    {/* PER GENERARE I BOTTONI CON MAP
                
-               {languages.map((language)=>(
-                    <button key={language.id} onClick={() => setSelectedLanguage(language.title)}>{language.title}</button>
+                    {languages.map((language)=>(
+                        <button key={language.id} onClick={() => setSelectedLanguage(language.title)}>{language.title}</button>
+                    ))}*/}
+                </section>
 
-                ))}*/}
+                <section className='section_three'>
 
-                {languages.map((language) =>
-                    language.title === selectedLanguage &&(
-                    <div key={language.id}>
-                        <h2>{language.title}</h2>
-                        <p>{language.description}</p>
-                    </div>
-                ))}
+                    {!selectedLanguage && <h3>Nessun linguaggio selezionato</h3>} 
+
+                    {languages.map((language) =>
+                        language.title === selectedLanguage &&(
+                        <div key={language.id}>
+                            <h2>{language.title}</h2>
+                            <p>{language.description}</p>
+                        </div>
+                    ))}
+
+                </section>
             
             </main>
 
